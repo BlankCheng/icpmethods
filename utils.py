@@ -65,7 +65,7 @@ def generatePerturbation(theta, translation):
     theta = theta / 180 * 3.14159
     if translation != 0:
         t = np.random.random((1, 3))
-        t = t / np.linalg.norm(t) / sqrt(1 / translation)
+        t = (t / np.linalg.norm(t)) * translation
     else:
         t = np.zeros((1, 3))
     antisymmetric = np.array([[0, -n[0, 2], n[0, 1]],
